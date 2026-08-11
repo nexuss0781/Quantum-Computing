@@ -13,6 +13,7 @@
 #include "qau/quantum_dense.hpp"
 #include "qau/black_hole.hpp"
 #include "qau/backreaction.hpp"
+#include "qau/wormhole.hpp"
 
 namespace py = pybind11;
 
@@ -209,4 +210,40 @@ PYBIND11_MODULE(qau_cpp, m) {
         .def_property_readonly("triangles", [](const qau::DiscreteGeometry& geometry) {
             return geometry.triangles();
         });
+
+    // Phase V: ER=EPR-inspired teleportation toy model
+    py::class_<qau::QubitMessage>(m, "QubitMessage")
+        .def(py::init<qau::Complex, qau::Complex>(), py::arg("alpha") = qau::Complex{1.0, 0.0},
+             py::arg("beta") = qau::Complex{0.0, 0.0})
+        .def_static("from_angles", &qau::QubitMessage::from_angles)
+        .def("normalize", &qau::QubitMessage::normalize)
+        .def_readwrite("alpha", &qau::QubitMessage::alpha)
+        .def_readwrite("beta", &qau::QubitMessage::beta);
+
+    py::class_<qau::QubitDensityMatrix>(m, "QubitDensityMatrix")
+        .def_readonly("rho00", &qau::QubitDensityMatrix::rho00)
+        .def_readonly("rho01", &qau::QubitDensityMatrix::rho01)
+        .def_readonly("rho10", &qau::QubitDensityMatrix::rho10)
+        .def_readonly("rho11", &qau::QubitDensityMatrix::rho11)
+        .def("trace", &qau::QubitDensityMatrix::trace)
+        .def("purity", &qau::QubitDensityMatrix::purity)
+        .def("bloch_vector", &qau::QubitDensityMatrix::bloch_vector);
+
+    py::class_<qau::WormholeTransferOutcome>(m, "WormholeTransferOutcome")
+        .def_readonly("carriers_entangled", &qau::WormholeTransferOutcome::carriers_entangled)
+        .def_readonly("coherent_feedforward", &qau::WormholeTransferOutcome::coherent_feedforward)
+        .def_readonly("carrier_bell_fidelity", &qau::WormholeTransferOutcome::carrier_bell_fidelity)
+        .def_readonly("receiver_fidelity", &qau::WormholeTransferOutcome::receiver_fidelity)
+        .def_readonly("receiver_purity", &qau::WormholeTransferOutcome::receiver_purity)
+        .def_readonly("global_norm_error", &qau::WormholeTransferOutcome::global_norm_error)
+        .def_readonly("receiver_density", &qau::WormholeTransferOutcome::receiver_density)
+        .def_readonly("receiver_bloch", &qau::WormholeTransferOutcome::receiver_bloch);
+
+    py::class_<qau::ER_EPR_WormholeToy>(m, "EREPRWormholeToy")
+        .def_static("transfer", &qau::ER_EPR_WormholeToy::transfer,
+                    py::arg("message"), py::arg("entangle_carriers") = true,
+                    py::arg("coherent_feedforward") = true)
+        .def_static("six_state_ensemble", &qau::ER_EPR_WormholeToy::six_state_ensemble)
+        .def_static("average_fidelity", &qau::ER_EPR_WormholeToy::average_fidelity,
+                    py::arg("entangle_carriers"), py::arg("coherent_feedforward"));
 }

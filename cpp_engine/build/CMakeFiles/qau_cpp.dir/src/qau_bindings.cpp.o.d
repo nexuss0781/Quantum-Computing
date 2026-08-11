@@ -719,4 +719,5 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/black_hole.hpp \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/quantum_dense.hpp \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/backreaction.hpp \
- /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h
+ /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/wormhole.hpp

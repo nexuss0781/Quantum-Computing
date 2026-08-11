@@ -192,6 +192,19 @@ event_horizon_phase4_tests/fast:
 .PHONY : event_horizon_phase4_tests/fast
 
 #=============================================================================
+# Target rules for targets named event_horizon_phase5_tests
+
+# Build rule for target.
+event_horizon_phase5_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event_horizon_phase5_tests
+.PHONY : event_horizon_phase5_tests
+
+# fast build rule for target.
+event_horizon_phase5_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase5_tests.dir/build.make CMakeFiles/event_horizon_phase5_tests.dir/build
+.PHONY : event_horizon_phase5_tests/fast
+
+#=============================================================================
 # Target rules for targets named qau_cpp
 
 # Build rule for target.
@@ -276,6 +289,30 @@ tests/test_event_horizon_phase4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase4_tests.dir/build.make CMakeFiles/event_horizon_phase4_tests.dir/tests/test_event_horizon_phase4.cpp.s
 .PHONY : tests/test_event_horizon_phase4.cpp.s
 
+tests/test_event_horizon_phase5.o: tests/test_event_horizon_phase5.cpp.o
+.PHONY : tests/test_event_horizon_phase5.o
+
+# target to build an object file
+tests/test_event_horizon_phase5.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase5_tests.dir/build.make CMakeFiles/event_horizon_phase5_tests.dir/tests/test_event_horizon_phase5.cpp.o
+.PHONY : tests/test_event_horizon_phase5.cpp.o
+
+tests/test_event_horizon_phase5.i: tests/test_event_horizon_phase5.cpp.i
+.PHONY : tests/test_event_horizon_phase5.i
+
+# target to preprocess a source file
+tests/test_event_horizon_phase5.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase5_tests.dir/build.make CMakeFiles/event_horizon_phase5_tests.dir/tests/test_event_horizon_phase5.cpp.i
+.PHONY : tests/test_event_horizon_phase5.cpp.i
+
+tests/test_event_horizon_phase5.s: tests/test_event_horizon_phase5.cpp.s
+.PHONY : tests/test_event_horizon_phase5.s
+
+# target to generate assembly for a file
+tests/test_event_horizon_phase5.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase5_tests.dir/build.make CMakeFiles/event_horizon_phase5_tests.dir/tests/test_event_horizon_phase5.cpp.s
+.PHONY : tests/test_event_horizon_phase5.cpp.s
+
 tests/test_phase2.o: tests/test_phase2.cpp.o
 .PHONY : tests/test_phase2.o
 
@@ -359,6 +396,7 @@ help:
 	@echo "... test"
 	@echo "... event_horizon_phase3_tests"
 	@echo "... event_horizon_phase4_tests"
+	@echo "... event_horizon_phase5_tests"
 	@echo "... phase2_tests"
 	@echo "... phase3_tests"
 	@echo "... qau_cpp"
@@ -372,6 +410,9 @@ help:
 	@echo "... tests/test_event_horizon_phase4.o"
 	@echo "... tests/test_event_horizon_phase4.i"
 	@echo "... tests/test_event_horizon_phase4.s"
+	@echo "... tests/test_event_horizon_phase5.o"
+	@echo "... tests/test_event_horizon_phase5.i"
+	@echo "... tests/test_event_horizon_phase5.s"
 	@echo "... tests/test_phase2.o"
 	@echo "... tests/test_phase2.i"
 	@echo "... tests/test_phase2.s"

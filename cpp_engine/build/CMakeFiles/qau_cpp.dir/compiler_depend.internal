@@ -18,6 +18,7 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/qvs.hpp
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/rpw.hpp
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/vm.hpp
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/wormhole.hpp
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h

@@ -17,6 +17,7 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
   /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/qvs.hpp \
   /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/rpw.hpp \
   /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/vm.hpp \
+  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/wormhole.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1410,23 +1411,9 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
+/usr/include/c++/13/bits/stl_relops.h:
 
-/usr/include/eigen3/Eigen/src/Core/Swap.h:
-
-/usr/include/c++/13/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/13/typeindex:
-
-/usr/include/c++/13/bits/stl_uninitialized.h:
-
-/usr/include/c++/13/bits/new_allocator.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/popcntintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
-
-/usr/include/c++/13/bits/stl_map.h:
+/usr/include/python3.12/pyconfig.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
@@ -1449,8 +1436,6 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 /usr/include/c++/13/bits/indirect_array.h:
 
 /usr/include/c++/13/bits/forward_list.h:
-
-/usr/include/eigen3/Eigen/src/Core/Array.h:
 
 /usr/include/c++/13/typeinfo:
 
@@ -1526,6 +1511,10 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/python3.12/cpython/bytearrayobject.h:
 
+/usr/include/c++/13/vector:
+
+/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
+
 /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
 
 /usr/include/c++/13/exception:
@@ -1541,10 +1530,6 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/quantum_dense.hpp:
 
 /usr/include/c++/13/bits/uses_allocator.h:
-
-/usr/include/c++/13/vector:
-
-/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
 
 /usr/include/c++/13/bits/shared_ptr.h:
 
@@ -1596,8 +1581,6 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/c++/13/bits/stl_queue.h:
 
-/home/ubuntu/Quantum-Computing/cpp_engine/include/qau/fields.hpp:
-
 /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/entropy.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h:
@@ -1609,6 +1592,12 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 /usr/include/c++/13/bits/uses_allocator_args.h:
 
 /usr/include/python3.12/cpython/weakrefobject.h:
+
+/usr/include/c++/13/bits/new_allocator.h:
+
+/usr/include/c++/13/typeindex:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/eigen3/Eigen/src/Core/StableNorm.h:
 
@@ -1678,6 +1667,12 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/python3.12/moduleobject.h:
 
+/usr/include/eigen3/Eigen/src/Core/Swap.h:
+
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
+
+/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
+
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniintrin.h:
@@ -1706,7 +1701,17 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
 
+/home/ubuntu/Quantum-Computing/cpp_engine/include/qau/fields.hpp:
+
+/home/ubuntu/Quantum-Computing/cpp_engine/include/qau/wormhole.hpp:
+
 /usr/include/c++/13/ext/string_conversions.h:
+
+/usr/include/c++/13/bits/stl_multiset.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/c++/13/bits/postypes.h:
 
 /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/vm.hpp:
 
@@ -1759,6 +1764,12 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 /usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
 
 /usr/include/c++/13/bits/stream_iterator.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/popcntintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/c++/13/bits/stl_map.h:
 
 /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/ncb.hpp:
 
@@ -1832,8 +1843,6 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/c++/13/bits/slice_array.h:
 
-/usr/include/c++/13/bits/parse_numbers.h:
-
 /usr/include/c++/13/bits/ranges_uninitialized.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
@@ -1900,10 +1909,6 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/eigen3/Eigen/src/Core/util/Meta.h:
 
-/usr/include/c++/13/bits/stl_multiset.h:
-
-/usr/include/c++/13/bits/postypes.h:
-
 /usr/include/limits.h:
 
 /usr/include/c++/13/cstdlib:
@@ -1942,9 +1947,7 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/c++/13/bits/stl_numeric.h:
 
-/usr/include/c++/13/bits/stl_relops.h:
-
-/usr/include/python3.12/pyconfig.h:
+/usr/include/eigen3/Eigen/src/Core/Array.h:
 
 /usr/include/eigen3/Eigen/src/Core/ArrayBase.h:
 
@@ -2424,6 +2427,10 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 
 /usr/include/python3.12/intrcheck.h:
 
+/usr/include/python3.12/pyerrors.h:
+
+/usr/include/python3.12/iterobject.h:
+
 /usr/include/python3.12/listobject.h:
 
 /usr/include/c++/13/bits/string_view.tcc:
@@ -2439,7 +2446,3 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: /home/ubuntu/Quantum-Computing/cp
 /usr/include/python3.12/patchlevel.h:
 
 /usr/include/python3.12/pycapsule.h:
-
-/usr/include/python3.12/iterobject.h:
-
-/usr/include/python3.12/pyerrors.h:
