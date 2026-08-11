@@ -711,4 +711,7 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/holography.hpp \
- /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/entropy.hpp
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/entropy.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/hyperbolic.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/holographic_network.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/hyperbolic.hpp

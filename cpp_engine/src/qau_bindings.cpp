@@ -8,6 +8,8 @@
 #include "qau/qml.hpp"
 #include "qau/entropy.hpp"
 #include "qau/holography.hpp"
+#include "qau/hyperbolic.hpp"
+#include "qau/holographic_network.hpp"
 
 namespace py = pybind11;
 
@@ -86,4 +88,20 @@ PYBIND11_MODULE(qau_cpp, m) {
     py::class_<qau::HolographyEngine>(m, "HolographyEngine")
         .def_static("mutual_information", &qau::HolographyEngine::mutual_information)
         .def_static("emergent_distance", &qau::HolographyEngine::emergent_distance);
+
+    // Phase 2: Hyperbolic Geometry and Holographic Networks
+    py::class_<qau::HyperbolicGeometry>(m, "HyperbolicGeometry")
+        .def_static("distance", &qau::HyperbolicGeometry::distance)
+        .def_static("generate_discretization", &qau::HyperbolicGeometry::generate_discretization);
+
+    py::class_<qau::BulkNode>(m, "BulkNode")
+        .def_readwrite("id", &qau::BulkNode::id)
+        .def_readwrite("coord", &qau::BulkNode::coord)
+        .def_readwrite("neighbors", &qau::BulkNode::neighbors);
+
+    py::class_<qau::HolographicNetwork>(m, "HolographicNetwork")
+        .def(py::init<int, int>())
+        .def("map_boundary", &qau::HolographicNetwork::map_boundary)
+        .def_readwrite("bulk_nodes", &qau::HolographicNetwork::bulk_nodes)
+        .def_readwrite("boundary_to_bulk_map", &qau::HolographicNetwork::boundary_to_bulk_map);
 }
