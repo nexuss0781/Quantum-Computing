@@ -139,6 +139,43 @@ qau_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_tests.dir/build.make CMakeFiles/qau_tests.dir/build
 .PHONY : qau_tests/fast
 
+#=============================================================================
+# Target rules for targets named phase2_tests
+
+# Build rule for target.
+phase2_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 phase2_tests
+.PHONY : phase2_tests
+
+# fast build rule for target.
+phase2_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_tests.dir/build.make CMakeFiles/phase2_tests.dir/build
+.PHONY : phase2_tests/fast
+
+tests/test_phase2.o: tests/test_phase2.cpp.o
+.PHONY : tests/test_phase2.o
+
+# target to build an object file
+tests/test_phase2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_tests.dir/build.make CMakeFiles/phase2_tests.dir/tests/test_phase2.cpp.o
+.PHONY : tests/test_phase2.cpp.o
+
+tests/test_phase2.i: tests/test_phase2.cpp.i
+.PHONY : tests/test_phase2.i
+
+# target to preprocess a source file
+tests/test_phase2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_tests.dir/build.make CMakeFiles/phase2_tests.dir/tests/test_phase2.cpp.i
+.PHONY : tests/test_phase2.cpp.i
+
+tests/test_phase2.s: tests/test_phase2.cpp.s
+.PHONY : tests/test_phase2.s
+
+# target to generate assembly for a file
+tests/test_phase2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_tests.dir/build.make CMakeFiles/phase2_tests.dir/tests/test_phase2.cpp.s
+.PHONY : tests/test_phase2.cpp.s
+
 tests/test_qvs.o: tests/test_qvs.cpp.o
 .PHONY : tests/test_qvs.o
 
@@ -172,7 +209,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... phase2_tests"
 	@echo "... qau_tests"
+	@echo "... tests/test_phase2.o"
+	@echo "... tests/test_phase2.i"
+	@echo "... tests/test_phase2.s"
 	@echo "... tests/test_qvs.o"
 	@echo "... tests/test_qvs.i"
 	@echo "... tests/test_qvs.s"
