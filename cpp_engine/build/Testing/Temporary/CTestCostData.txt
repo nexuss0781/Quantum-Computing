@@ -1,6 +1,8 @@
-QAUTests 1 0.00230952
-Phase2Tests 1 0.00216133
-Phase3Tests 1 0.0835121
-EventHorizonPhase3Tests 1 0.00348367
-EventHorizonPhase3PythonIntegration 1 3.03397
+QAUTests 2 0.00100777
+Phase2Tests 2 0.00103743
+Phase3Tests 2 0.0416324
+EventHorizonPhase3Tests 2 0.00178154
+EventHorizonPhase3PythonIntegration 2 1.52333
+EventHorizonPhase4Tests 1 0.0480101
+EventHorizonPhase4PythonIntegration 1 3.16818
 ---

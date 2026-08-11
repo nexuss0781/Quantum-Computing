@@ -19,11 +19,13 @@ add_executable(qau_tests tests/test_qvs.cpp)
 add_executable(phase2_tests tests/test_phase2.cpp)
 add_executable(phase3_tests tests/test_phase3.cpp)
 add_executable(event_horizon_phase3_tests tests/test_event_horizon_phase3.cpp)
+add_executable(event_horizon_phase4_tests tests/test_event_horizon_phase4.cpp)
 
 target_link_libraries(qau_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(phase2_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(phase3_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(event_horizon_phase3_tests PRIVATE OpenMP::OpenMP_CXX)
+target_link_libraries(event_horizon_phase4_tests PRIVATE OpenMP::OpenMP_CXX)
 
 # Python Bindings
 find_package(pybind11 REQUIRED)
@@ -36,5 +38,8 @@ add_test(NAME QAUTests COMMAND qau_tests)
 add_test(NAME Phase2Tests COMMAND phase2_tests)
 add_test(NAME Phase3Tests COMMAND phase3_tests)
 add_test(NAME EventHorizonPhase3Tests COMMAND event_horizon_phase3_tests)
+add_test(NAME EventHorizonPhase4Tests COMMAND event_horizon_phase4_tests)
 add_test(NAME EventHorizonPhase3PythonIntegration
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/phase3_visualization.py)
+add_test(NAME EventHorizonPhase4PythonIntegration
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/phase4_visualization.py)

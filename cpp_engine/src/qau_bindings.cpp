@@ -12,6 +12,7 @@
 #include "qau/holographic_network.hpp"
 #include "qau/quantum_dense.hpp"
 #include "qau/black_hole.hpp"
+#include "qau/backreaction.hpp"
 
 namespace py = pybind11;
 
@@ -156,4 +157,56 @@ PYBIND11_MODULE(qau_cpp, m) {
     py::class_<qau::DenseEntropyDiagnostics>(m, "DenseEntropyDiagnostics")
         .def_static("von_neumann_entropy", &qau::DenseEntropyDiagnostics::von_neumann_entropy)
         .def_static("purity", &qau::DenseEntropyDiagnostics::purity);
+
+    // Phase IV: discrete geometry and matter backreaction
+    py::class_<qau::GeometryVertex>(m, "GeometryVertex")
+        .def_readonly("id", &qau::GeometryVertex::id)
+        .def_readonly("x", &qau::GeometryVertex::x)
+        .def_readonly("y", &qau::GeometryVertex::y)
+        .def_readonly("energy_density", &qau::GeometryVertex::energy_density)
+        .def_readonly("boundary", &qau::GeometryVertex::boundary);
+
+    py::class_<qau::GeometryEdge>(m, "GeometryEdge")
+        .def_readonly("id", &qau::GeometryEdge::id)
+        .def_readonly("a", &qau::GeometryEdge::a)
+        .def_readonly("b", &qau::GeometryEdge::b)
+        .def_readonly("baseline_length", &qau::GeometryEdge::baseline_length)
+        .def_readonly("length", &qau::GeometryEdge::length);
+
+    py::class_<qau::GeometryDiagnostics>(m, "GeometryDiagnostics")
+        .def_readonly("step", &qau::GeometryDiagnostics::step)
+        .def_readonly("total_energy", &qau::GeometryDiagnostics::total_energy)
+        .def_readonly("average_edge_length", &qau::GeometryDiagnostics::average_edge_length)
+        .def_readonly("mean_abs_interior_curvature", &qau::GeometryDiagnostics::mean_abs_interior_curvature)
+        .def_readonly("maximum_abs_interior_curvature", &qau::GeometryDiagnostics::maximum_abs_interior_curvature)
+        .def_readonly("mean_ollivier_ricci", &qau::GeometryDiagnostics::mean_ollivier_ricci)
+        .def_readonly("maximum_edge_delta", &qau::GeometryDiagnostics::maximum_edge_delta)
+        .def_readonly("metric_valid", &qau::GeometryDiagnostics::metric_valid);
+
+    py::class_<qau::DiscreteGeometry>(m, "DiscreteGeometry")
+        .def_static("triangular_grid", &qau::DiscreteGeometry::triangular_grid,
+                    py::arg("width"), py::arg("height"), py::arg("spacing") = 1.0)
+        .def("set_energy_density", &qau::DiscreteGeometry::set_energy_density)
+        .def("clear_energy_density", &qau::DiscreteGeometry::clear_energy_density)
+        .def("set_radial_gaussian_source", &qau::DiscreteGeometry::set_radial_gaussian_source)
+        .def("total_energy", &qau::DiscreteGeometry::total_energy)
+        .def("mean_abs_interior_curvature", &qau::DiscreteGeometry::mean_abs_interior_curvature)
+        .def("maximum_abs_interior_curvature", &qau::DiscreteGeometry::maximum_abs_interior_curvature)
+        .def("mean_ollivier_ricci", &qau::DiscreteGeometry::mean_ollivier_ricci)
+        .def("backreact_step", &qau::DiscreteGeometry::backreact_step,
+             py::arg("coupling"), py::arg("relaxation") = 0.15, py::arg("min_length_ratio") = 0.60)
+        .def("evolve", &qau::DiscreteGeometry::evolve,
+             py::arg("steps"), py::arg("coupling"), py::arg("relaxation") = 0.15,
+             py::arg("min_length_ratio") = 0.60)
+        .def("metric_is_valid", &qau::DiscreteGeometry::metric_is_valid,
+             py::arg("tolerance") = 1e-12)
+        .def_property_readonly("vertices", [](const qau::DiscreteGeometry& geometry) {
+            return geometry.vertices();
+        })
+        .def_property_readonly("edges", [](const qau::DiscreteGeometry& geometry) {
+            return geometry.edges();
+        })
+        .def_property_readonly("triangles", [](const qau::DiscreteGeometry& geometry) {
+            return geometry.triangles();
+        });
 }

@@ -67,6 +67,7 @@ all: CMakeFiles/qau_tests.dir/all
 all: CMakeFiles/phase2_tests.dir/all
 all: CMakeFiles/phase3_tests.dir/all
 all: CMakeFiles/event_horizon_phase3_tests.dir/all
+all: CMakeFiles/event_horizon_phase4_tests.dir/all
 all: CMakeFiles/qau_cpp.dir/all
 .PHONY : all
 
@@ -79,6 +80,7 @@ clean: CMakeFiles/qau_tests.dir/clean
 clean: CMakeFiles/phase2_tests.dir/clean
 clean: CMakeFiles/phase3_tests.dir/clean
 clean: CMakeFiles/event_horizon_phase3_tests.dir/clean
+clean: CMakeFiles/event_horizon_phase4_tests.dir/clean
 clean: CMakeFiles/qau_cpp.dir/clean
 .PHONY : clean
 
@@ -89,7 +91,7 @@ clean: CMakeFiles/qau_cpp.dir/clean
 CMakeFiles/qau_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_tests.dir/build.make CMakeFiles/qau_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_tests.dir/build.make CMakeFiles/qau_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=9,10 "Built target qau_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=11,12 "Built target qau_tests"
 .PHONY : CMakeFiles/qau_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -115,7 +117,7 @@ CMakeFiles/qau_tests.dir/clean:
 CMakeFiles/phase2_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_tests.dir/build.make CMakeFiles/phase2_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_tests.dir/build.make CMakeFiles/phase2_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=3,4 "Built target phase2_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=5,6 "Built target phase2_tests"
 .PHONY : CMakeFiles/phase2_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -141,7 +143,7 @@ CMakeFiles/phase2_tests.dir/clean:
 CMakeFiles/phase3_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase3_tests.dir/build.make CMakeFiles/phase3_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase3_tests.dir/build.make CMakeFiles/phase3_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=5,6 "Built target phase3_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=7,8 "Built target phase3_tests"
 .PHONY : CMakeFiles/phase3_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -187,13 +189,39 @@ CMakeFiles/event_horizon_phase3_tests.dir/clean:
 .PHONY : CMakeFiles/event_horizon_phase3_tests.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/event_horizon_phase4_tests.dir
+
+# All Build rule for target.
+CMakeFiles/event_horizon_phase4_tests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase4_tests.dir/build.make CMakeFiles/event_horizon_phase4_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase4_tests.dir/build.make CMakeFiles/event_horizon_phase4_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=3,4 "Built target event_horizon_phase4_tests"
+.PHONY : CMakeFiles/event_horizon_phase4_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/event_horizon_phase4_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/event_horizon_phase4_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles 0
+.PHONY : CMakeFiles/event_horizon_phase4_tests.dir/rule
+
+# Convenience name for target.
+event_horizon_phase4_tests: CMakeFiles/event_horizon_phase4_tests.dir/rule
+.PHONY : event_horizon_phase4_tests
+
+# clean rule for target.
+CMakeFiles/event_horizon_phase4_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase4_tests.dir/build.make CMakeFiles/event_horizon_phase4_tests.dir/clean
+.PHONY : CMakeFiles/event_horizon_phase4_tests.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/qau_cpp.dir
 
 # All Build rule for target.
 CMakeFiles/qau_cpp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=7,8 "Built target qau_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=9,10 "Built target qau_cpp"
 .PHONY : CMakeFiles/qau_cpp.dir/all
 
 # Build rule for subdir invocation for target.
