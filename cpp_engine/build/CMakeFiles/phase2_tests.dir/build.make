@@ -92,6 +92,8 @@ phase2_tests_EXTERNAL_OBJECTS =
 
 phase2_tests: CMakeFiles/phase2_tests.dir/tests/test_phase2.cpp.o
 phase2_tests: CMakeFiles/phase2_tests.dir/build.make
+phase2_tests: /usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so
+phase2_tests: /usr/lib/x86_64-linux-gnu/libpthread.a
 phase2_tests: CMakeFiles/phase2_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/Quantum-Computing/cpp_engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable phase2_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/phase2_tests.dir/link.txt --verbose=$(VERBOSE)

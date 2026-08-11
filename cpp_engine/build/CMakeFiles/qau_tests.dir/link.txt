@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/qau_tests.dir/tests/test_qvs.cpp.o -o qau_tests 
+/usr/bin/c++ CMakeFiles/qau_tests.dir/tests/test_qvs.cpp.o -o qau_tests  /usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so /usr/lib/x86_64-linux-gnu/libpthread.a 

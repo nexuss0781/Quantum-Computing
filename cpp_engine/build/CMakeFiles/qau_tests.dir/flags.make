@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/ubuntu/Quantum-Computing/cpp_engine/include -I/usr/include/eigen3
 
-CXX_FLAGS = -std=gnu++20
+CXX_FLAGS = -std=gnu++20 -O3 -march=native -ffast-math -fopenmp -fopenmp
 
