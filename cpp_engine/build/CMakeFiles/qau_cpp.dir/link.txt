@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -flto -shared  -o qau_cpp.cpython-312-x86_64-linux-gnu.so CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o  /usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so /usr/lib/x86_64-linux-gnu/libpthread.a 

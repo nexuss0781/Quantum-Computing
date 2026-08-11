@@ -23,6 +23,11 @@ target_link_libraries(qau_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(phase2_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(phase3_tests PRIVATE OpenMP::OpenMP_CXX)
 
+# Python Bindings
+find_package(pybind11 REQUIRED)
+pybind11_add_module(qau_cpp src/qau_bindings.cpp)
+target_link_libraries(qau_cpp PRIVATE OpenMP::OpenMP_CXX)
+
 enable_testing()
 add_test(NAME QAUTests COMMAND qau_tests)
 add_test(NAME Phase2Tests COMMAND phase2_tests)

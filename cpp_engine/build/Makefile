@@ -165,6 +165,43 @@ phase3_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase3_tests.dir/build.make CMakeFiles/phase3_tests.dir/build
 .PHONY : phase3_tests/fast
 
+#=============================================================================
+# Target rules for targets named qau_cpp
+
+# Build rule for target.
+qau_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qau_cpp
+.PHONY : qau_cpp
+
+# fast build rule for target.
+qau_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/build
+.PHONY : qau_cpp/fast
+
+src/qau_bindings.o: src/qau_bindings.cpp.o
+.PHONY : src/qau_bindings.o
+
+# target to build an object file
+src/qau_bindings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o
+.PHONY : src/qau_bindings.cpp.o
+
+src/qau_bindings.i: src/qau_bindings.cpp.i
+.PHONY : src/qau_bindings.i
+
+# target to preprocess a source file
+src/qau_bindings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.i
+.PHONY : src/qau_bindings.cpp.i
+
+src/qau_bindings.s: src/qau_bindings.cpp.s
+.PHONY : src/qau_bindings.s
+
+# target to generate assembly for a file
+src/qau_bindings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.s
+.PHONY : src/qau_bindings.cpp.s
+
 tests/test_phase2.o: tests/test_phase2.cpp.o
 .PHONY : tests/test_phase2.o
 
@@ -248,7 +285,11 @@ help:
 	@echo "... test"
 	@echo "... phase2_tests"
 	@echo "... phase3_tests"
+	@echo "... qau_cpp"
 	@echo "... qau_tests"
+	@echo "... src/qau_bindings.o"
+	@echo "... src/qau_bindings.i"
+	@echo "... src/qau_bindings.s"
 	@echo "... tests/test_phase2.o"
 	@echo "... tests/test_phase2.i"
 	@echo "... tests/test_phase2.s"
