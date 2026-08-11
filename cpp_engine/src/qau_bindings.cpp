@@ -4,6 +4,8 @@
 #include "qau/qvs.hpp"
 #include "qau/qasm.hpp"
 #include "qau/vm.hpp"
+#include "qau/fields.hpp"
+#include "qau/qml.hpp"
 
 namespace py = pybind11;
 
@@ -45,4 +47,21 @@ PYBIND11_MODULE(qau_cpp, m) {
 
     py::class_<qau::BytecodeVM>(m, "BytecodeVM")
         .def_static("execute", &qau::BytecodeVM::execute);
+
+    // Phase 5: Fields and QML
+    py::class_<qau::QuantumLattice>(m, "QuantumLattice")
+        .def(py::init<qau::QVS&, int, int>())
+        .def("apply_field_operator", &qau::QuantumLattice::apply_field_operator)
+        .def("establish_gauge_symmetry", &qau::QuantumLattice::establish_gauge_symmetry)
+        .def_readwrite("site_ids", &qau::QuantumLattice::site_ids);
+
+    py::class_<qau::ParameterizedGate>(m, "ParameterizedGate")
+        .def_readwrite("target_id", &qau::ParameterizedGate::target_id)
+        .def_readwrite("theta", &qau::ParameterizedGate::theta)
+        .def_readwrite("gradient", &qau::ParameterizedGate::gradient);
+
+    py::class_<qau::QMLEngine>(m, "QMLEngine")
+        .def(py::init<>())
+        .def("add_parameterized_weave", &qau::QMLEngine::add_parameterized_weave)
+        .def_readwrite("parameters", &qau::QMLEngine::parameters);
 }

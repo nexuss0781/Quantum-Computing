@@ -420,4 +420,6 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/vm.hpp \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/qvs.hpp \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/qasm.hpp \
- /usr/include/c++/13/iostream
+ /usr/include/c++/13/iostream \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/fields.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/qml.hpp
