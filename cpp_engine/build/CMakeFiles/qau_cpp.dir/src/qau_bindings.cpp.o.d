@@ -714,4 +714,7 @@ CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.o: \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/entropy.hpp \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/hyperbolic.hpp \
  /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/holographic_network.hpp \
- /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/hyperbolic.hpp
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/hyperbolic.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/quantum_dense.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/black_hole.hpp \
+ /home/ubuntu/Quantum-Computing/cpp_engine/include/qau/quantum_dense.hpp

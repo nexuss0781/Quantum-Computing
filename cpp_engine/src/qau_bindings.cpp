@@ -10,6 +10,8 @@
 #include "qau/holography.hpp"
 #include "qau/hyperbolic.hpp"
 #include "qau/holographic_network.hpp"
+#include "qau/quantum_dense.hpp"
+#include "qau/black_hole.hpp"
 
 namespace py = pybind11;
 
@@ -104,4 +106,54 @@ PYBIND11_MODULE(qau_cpp, m) {
         .def("map_boundary", &qau::HolographicNetwork::map_boundary)
         .def_readwrite("bulk_nodes", &qau::HolographicNetwork::bulk_nodes)
         .def_readwrite("boundary_to_bulk_map", &qau::HolographicNetwork::boundary_to_bulk_map);
+
+    // Phase III: dense scrambling, OTOCs, and Page-curve diagnostics
+    py::class_<qau::DenseQuantumState, std::shared_ptr<qau::DenseQuantumState>>(m, "DenseQuantumState")
+        .def(py::init<int>())
+        .def("num_qubits", &qau::DenseQuantumState::num_qubits)
+        .def("norm_squared", &qau::DenseQuantumState::norm_squared)
+        .def("normalize", &qau::DenseQuantumState::normalize)
+        .def("get_state_vector", [](const qau::DenseQuantumState& state) {
+            return state.amplitudes();
+        });
+
+    py::class_<qau::QuantumCircuit>(m, "QuantumCircuit")
+        .def(py::init<int>())
+        .def("hadamard", &qau::QuantumCircuit::hadamard)
+        .def("rotation_y", &qau::QuantumCircuit::rotation_y)
+        .def("rotation_z", &qau::QuantumCircuit::rotation_z)
+        .def("controlled_not", &qau::QuantumCircuit::controlled_not)
+        .def("apply", &qau::QuantumCircuit::apply)
+        .def("apply_inverse", &qau::QuantumCircuit::apply_inverse)
+        .def_static("brickwork_scrambler", &qau::QuantumCircuit::brickwork_scrambler,
+                    py::arg("num_qubits"), py::arg("layers"), py::arg("seed"),
+                    py::arg("active_qubits") = std::vector<int>{});
+
+    py::class_<qau::OTOCResult>(m, "OTOCResult")
+        .def_readonly("correlator", &qau::OTOCResult::correlator)
+        .def_readonly("commutator_squared", &qau::OTOCResult::commutator_squared)
+        .def_readonly("norm_error", &qau::OTOCResult::norm_error);
+
+    py::class_<qau::OTOCAnalyzer>(m, "OTOCAnalyzer")
+        .def_static("evaluate", &qau::OTOCAnalyzer::evaluate);
+
+    py::class_<qau::PageCurvePoint>(m, "PageCurvePoint")
+        .def_readonly("evaporation_step", &qau::PageCurvePoint::evaporation_step)
+        .def_readonly("black_hole_qubits", &qau::PageCurvePoint::black_hole_qubits)
+        .def_readonly("radiation_qubits", &qau::PageCurvePoint::radiation_qubits)
+        .def_readonly("radiation_entropy", &qau::PageCurvePoint::radiation_entropy)
+        .def_readonly("radiation_purity", &qau::PageCurvePoint::radiation_purity)
+        .def_readonly("global_norm_error", &qau::PageCurvePoint::global_norm_error);
+
+    py::class_<qau::EvaporatingBlackHoleToyModel>(m, "EvaporatingBlackHoleToyModel")
+        .def(py::init<int, std::uint64_t, int>())
+        .def("prepare_seeded_initial_state", &qau::EvaporatingBlackHoleToyModel::prepare_seeded_initial_state,
+             py::arg("layers") = 6)
+        .def("evaporate_one_qubit", &qau::EvaporatingBlackHoleToyModel::evaporate_one_qubit)
+        .def("evaporate_all", &qau::EvaporatingBlackHoleToyModel::evaporate_all)
+        .def("diagnostics", &qau::EvaporatingBlackHoleToyModel::diagnostics);
+
+    py::class_<qau::DenseEntropyDiagnostics>(m, "DenseEntropyDiagnostics")
+        .def_static("von_neumann_entropy", &qau::DenseEntropyDiagnostics::von_neumann_entropy)
+        .def_static("purity", &qau::DenseEntropyDiagnostics::purity);
 }

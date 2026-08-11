@@ -1,0 +1,122 @@
+Start testing: Aug 11 19:35 UTC
+----------------------------------------------------------
+1/5 Testing: QAUTests
+1/5 Test: QAUTests
+Command: "/home/ubuntu/Quantum-Computing/cpp_engine/build/qau_tests"
+Directory: /home/ubuntu/Quantum-Computing/cpp_engine/build
+"QAUTests" start time: Aug 11 19:35 UTC
+Output:
+----------------------------------------------------------
+=== QAU C++ Engine Phase 1 Test Suite ===
+Running C++ Superposition Test...
+Superposition test passed.
+Running C++ Interference (RPW) Test...
+Interference test passed.
+Running C++ Entanglement (NCB / Bell State) Test...
+Entanglement test passed with Bell state amplitudes verified.
+Running C++ Collapse Test...
+Collapse test passed with result: (0)
+=== All C++ Phase 1 Tests Passed Successfully! ===
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"QAUTests" end time: Aug 11 19:35 UTC
+"QAUTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: Phase2Tests
+2/5 Test: Phase2Tests
+Command: "/home/ubuntu/Quantum-Computing/cpp_engine/build/phase2_tests"
+Directory: /home/ubuntu/Quantum-Computing/cpp_engine/build
+"Phase2Tests" start time: Aug 11 19:35 UTC
+Output:
+----------------------------------------------------------
+=== QAU C++ Engine Phase 2 Evaluation Harness ===
+Running MPS Scalability Test (30 Qubits)...
+MPS Scalability Test passed successfully.
+Running Tensor Contraction Path Optimizer Test...
+Contraction Path Optimizer Test passed with 2 contraction steps.
+Running Sparse Engine Scalability Benchmark...
+Sparse superposition of 64 states across 10 qubits initialized in 0.020656 ms.
+Sparse scalability benchmark passed.
+=== All Phase 2 Evaluation Harness Tests Passed with 100% Success! ===
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Phase2Tests" end time: Aug 11 19:35 UTC
+"Phase2Tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: Phase3Tests
+3/5 Test: Phase3Tests
+Command: "/home/ubuntu/Quantum-Computing/cpp_engine/build/phase3_tests"
+Directory: /home/ubuntu/Quantum-Computing/cpp_engine/build
+"Phase3Tests" start time: Aug 11 19:35 UTC
+Output:
+----------------------------------------------------------
+=== QAU C++ Engine Phase 3 Performance Harness ===
+Running SIMD Phase Rotation Benchmark...
+Rotated 4194304 states in 1.83323 ms.
+SIMD Phase Rotation Test: GREEN
+Running Parallel Dot Product Benchmark...
+Computed dot product of 4194304 elements in 2.23144 ms.
+Parallel Dot Product Test: GREEN
+=== All Phase 3 Performance Tests: ULTIMATE GREEN SUCCESS! ===
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"Phase3Tests" end time: Aug 11 19:35 UTC
+"Phase3Tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: EventHorizonPhase3Tests
+4/5 Test: EventHorizonPhase3Tests
+Command: "/home/ubuntu/Quantum-Computing/cpp_engine/build/event_horizon_phase3_tests"
+Directory: /home/ubuntu/Quantum-Computing/cpp_engine/build
+"EventHorizonPhase3Tests" start time: Aug 11 19:35 UTC
+Output:
+----------------------------------------------------------
+=== Project Event Horizon — Phase III Validation Harness ===
+Model status: finite unitary-circuit toy model; not an astrophysical black-hole solver.
+[1/5] Unitary reversibility and deterministic seeded circuits...
+[2/5] Exact OTOC baseline and operator-spreading diagnostics...
+[3/5] Analytic reduced-density and entropy cases...
+[4/5] Closed-unitary evaporation toy model and Page-like entropy curve...
+    radiation entropy: 0.000000 0.661147 1.275771 1.606783 1.322868 0.666302 0.000000 
+[5/5] Page-curve reproducibility...
+=== Phase III harness: ALL TESTS GREEN ===
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventHorizonPhase3Tests" end time: Aug 11 19:35 UTC
+"EventHorizonPhase3Tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: EventHorizonPhase3PythonIntegration
+5/5 Test: EventHorizonPhase3PythonIntegration
+Command: "/usr/bin/python3" "/home/ubuntu/Quantum-Computing/cpp_engine/tests/phase3_visualization.py"
+Directory: /home/ubuntu/Quantum-Computing/cpp_engine/build
+"EventHorizonPhase3PythonIntegration" start time: Aug 11 19:35 UTC
+Output:
+----------------------------------------------------------
+findfont: Failed to find font weight bold, now using 400.
+findfont: Failed to find font weight bold, now using 400.
+findfont: Failed to find font weight bold, now using 400.
+findfont: Failed to find font weight bold, now using 400.
+=== Project Event Horizon — Phase III Python Integration Harness ===
+OTOC commutator diagnostics: [0.0, 0.0, 0.0, 0.640757, 0.200627, 2.521555, 1.18573, 2.271407, 2.62732]
+Page-curve radiation entropy: [0.0, 0.661147, 1.275771, 1.606783, 1.322868, 0.666302, 0.0]
+Python integration and visualization harness: ALL TESTS GREEN
+<end of output>
+Test time =   3.03 sec
+----------------------------------------------------------
+Test Passed.
+"EventHorizonPhase3PythonIntegration" end time: Aug 11 19:35 UTC
+"EventHorizonPhase3PythonIntegration" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Aug 11 19:35 UTC

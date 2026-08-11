@@ -166,6 +166,19 @@ phase3_tests/fast:
 .PHONY : phase3_tests/fast
 
 #=============================================================================
+# Target rules for targets named event_horizon_phase3_tests
+
+# Build rule for target.
+event_horizon_phase3_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event_horizon_phase3_tests
+.PHONY : event_horizon_phase3_tests
+
+# fast build rule for target.
+event_horizon_phase3_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase3_tests.dir/build.make CMakeFiles/event_horizon_phase3_tests.dir/build
+.PHONY : event_horizon_phase3_tests/fast
+
+#=============================================================================
 # Target rules for targets named qau_cpp
 
 # Build rule for target.
@@ -201,6 +214,30 @@ src/qau_bindings.s: src/qau_bindings.cpp.s
 src/qau_bindings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qau_cpp.dir/build.make CMakeFiles/qau_cpp.dir/src/qau_bindings.cpp.s
 .PHONY : src/qau_bindings.cpp.s
+
+tests/test_event_horizon_phase3.o: tests/test_event_horizon_phase3.cpp.o
+.PHONY : tests/test_event_horizon_phase3.o
+
+# target to build an object file
+tests/test_event_horizon_phase3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase3_tests.dir/build.make CMakeFiles/event_horizon_phase3_tests.dir/tests/test_event_horizon_phase3.cpp.o
+.PHONY : tests/test_event_horizon_phase3.cpp.o
+
+tests/test_event_horizon_phase3.i: tests/test_event_horizon_phase3.cpp.i
+.PHONY : tests/test_event_horizon_phase3.i
+
+# target to preprocess a source file
+tests/test_event_horizon_phase3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase3_tests.dir/build.make CMakeFiles/event_horizon_phase3_tests.dir/tests/test_event_horizon_phase3.cpp.i
+.PHONY : tests/test_event_horizon_phase3.cpp.i
+
+tests/test_event_horizon_phase3.s: tests/test_event_horizon_phase3.cpp.s
+.PHONY : tests/test_event_horizon_phase3.s
+
+# target to generate assembly for a file
+tests/test_event_horizon_phase3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_horizon_phase3_tests.dir/build.make CMakeFiles/event_horizon_phase3_tests.dir/tests/test_event_horizon_phase3.cpp.s
+.PHONY : tests/test_event_horizon_phase3.cpp.s
 
 tests/test_phase2.o: tests/test_phase2.cpp.o
 .PHONY : tests/test_phase2.o
@@ -283,6 +320,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... event_horizon_phase3_tests"
 	@echo "... phase2_tests"
 	@echo "... phase3_tests"
 	@echo "... qau_cpp"
@@ -290,6 +328,9 @@ help:
 	@echo "... src/qau_bindings.o"
 	@echo "... src/qau_bindings.i"
 	@echo "... src/qau_bindings.s"
+	@echo "... tests/test_event_horizon_phase3.o"
+	@echo "... tests/test_event_horizon_phase3.i"
+	@echo "... tests/test_event_horizon_phase3.s"
 	@echo "... tests/test_phase2.o"
 	@echo "... tests/test_phase2.i"
 	@echo "... tests/test_phase2.s"
