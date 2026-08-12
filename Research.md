@@ -4,7 +4,7 @@
 **Application status:** **Real measured-data engineering application demonstrated.**  
 **Physical deployment status:** The software produces an actuator setpoint recommendation from measured quantum-device records; a live laboratory actuator connection remains pending.  
 **Author:** Manus AI  
-**Repository commit for this revision:** to be filled after commit/push
+**Repository commit for this revision:** `c7726d7db9d913c255df14e873e527210936061b`
 
 > **Decision:** The project now contains a runnable quantum-powered calibration application, not only a mathematical model or a smoke-test suite. It consumes a public measured traveling-wave parametric-amplifier record, analyzes 2,500,000 measured values across 25 pump-phase settings, recommends a physical operating setpoint, and reproduces the stakeholder’s reported run-27 result. The result is an engineering calibration result on measured data; it is not a claim of a new physical law or a new fundamental unit system.
 
