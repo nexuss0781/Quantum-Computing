@@ -22,6 +22,7 @@ add_executable(event_horizon_phase3_tests tests/test_event_horizon_phase3.cpp)
 add_executable(event_horizon_phase4_tests tests/test_event_horizon_phase4.cpp)
 add_executable(event_horizon_phase5_tests tests/test_event_horizon_phase5.cpp)
 add_executable(vacuum_mode_tests tests/test_vacuum_mode.cpp)
+add_executable(vacuum_adaptive_tests tests/test_vacuum_adaptive.cpp)
 
 target_link_libraries(qau_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(phase2_tests PRIVATE OpenMP::OpenMP_CXX)
@@ -30,6 +31,7 @@ target_link_libraries(event_horizon_phase3_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(event_horizon_phase4_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(event_horizon_phase5_tests PRIVATE OpenMP::OpenMP_CXX)
 target_link_libraries(vacuum_mode_tests PRIVATE OpenMP::OpenMP_CXX)
+target_link_libraries(vacuum_adaptive_tests PRIVATE OpenMP::OpenMP_CXX)
 
 # Python Bindings
 find_package(pybind11 REQUIRED)
@@ -45,6 +47,7 @@ add_test(NAME EventHorizonPhase3Tests COMMAND event_horizon_phase3_tests)
 add_test(NAME EventHorizonPhase4Tests COMMAND event_horizon_phase4_tests)
 add_test(NAME EventHorizonPhase5Tests COMMAND event_horizon_phase5_tests)
 add_test(NAME VacuumModeTests COMMAND vacuum_mode_tests)
+add_test(NAME VacuumAdaptiveTests COMMAND vacuum_adaptive_tests)
 add_test(NAME EventHorizonPhase3PythonIntegration
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/phase3_visualization.py)
 add_test(NAME EventHorizonPhase4PythonIntegration
