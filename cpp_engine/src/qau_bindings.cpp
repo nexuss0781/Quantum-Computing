@@ -14,6 +14,7 @@
 #include "qau/black_hole.hpp"
 #include "qau/backreaction.hpp"
 #include "qau/wormhole.hpp"
+#include "qau/vacuum_mode.hpp"
 
 namespace py = pybind11;
 
@@ -246,4 +247,41 @@ PYBIND11_MODULE(qau_cpp, m) {
         .def_static("six_state_ensemble", &qau::ER_EPR_WormholeToy::six_state_ensemble)
         .def_static("average_fidelity", &qau::ER_EPR_WormholeToy::average_fidelity,
                     py::arg("entangle_carriers"), py::arg("coherent_feedforward"));
+
+    // Vacuum-mode QAU unit and quantum-sensing diagnostics
+    py::class_<qau::QuadratureMoments>(m, "QuadratureMoments")
+        .def_readonly("x_mean", &qau::QuadratureMoments::x_mean)
+        .def_readonly("p_mean", &qau::QuadratureMoments::p_mean)
+        .def_readonly("x_variance", &qau::QuadratureMoments::x_variance)
+        .def_readonly("p_variance", &qau::QuadratureMoments::p_variance);
+
+    py::class_<qau::VacuumNoiseScan>(m, "VacuumNoiseScan")
+        .def_readonly("minimum_variance", &qau::VacuumNoiseScan::minimum_variance)
+        .def_readonly("maximum_variance", &qau::VacuumNoiseScan::maximum_variance)
+        .def_readonly("minimum_angle", &qau::VacuumNoiseScan::minimum_angle)
+        .def_readonly("maximum_angle", &qau::VacuumNoiseScan::maximum_angle)
+        .def_readonly("improvement_db", &qau::VacuumNoiseScan::improvement_db);
+
+    py::class_<qau::VacuumMode>(m, "VacuumMode")
+        .def_static("vacuum", &qau::VacuumMode::vacuum,
+                    py::arg("cutoff"), py::arg("angular_frequency") = 1.0,
+                    py::arg("hbar") = 1.0)
+        .def_static("coherent", &qau::VacuumMode::coherent,
+                    py::arg("cutoff"), py::arg("alpha"),
+                    py::arg("angular_frequency") = 1.0, py::arg("hbar") = 1.0)
+        .def_static("squeezed_vacuum", &qau::VacuumMode::squeezed_vacuum,
+                    py::arg("cutoff"), py::arg("r"), py::arg("squeeze_phase") = 0.0,
+                    py::arg("angular_frequency") = 1.0, py::arg("hbar") = 1.0)
+        .def("cutoff", &qau::VacuumMode::cutoff)
+        .def("mean_occupation", &qau::VacuumMode::mean_occupation)
+        .def("mean_energy", &qau::VacuumMode::mean_energy)
+        .def("occupation_probability", &qau::VacuumMode::occupation_probability)
+        .def("quadrature_moments", &qau::VacuumMode::quadrature_moments)
+        .def("quadrature_variance", &qau::VacuumMode::quadrature_variance)
+        .def("uncertainty_product", &qau::VacuumMode::uncertainty_product)
+        .def("phase_rotate", &qau::VacuumMode::phase_rotate)
+        .def("scan_quadratures", &qau::VacuumMode::scan_quadratures,
+             py::arg("samples") = 720)
+        .def("norm_squared", &qau::VacuumMode::norm_squared_value)
+        .def_static("lossy_variance", &qau::VacuumMode::lossy_variance);
 }
